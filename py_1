@@ -1,0 +1,36 @@
+import turtle
+
+# Membuat window untuk menggambar
+wn = turtle.Screen()
+wn.title("Bendera polandia")
+wn.bgcolor("white")
+
+# Membuat objek turtle
+flag = turtle.Turtle()
+flag.speed(2)
+
+# Fungsi untuk menggambar persegi panjang dengan warna tertentu
+def draw_rectangle(turtle, color, width, height):
+    turtle.begin_fill()
+    turtle.fillcolor(color)
+    for _ in range(2):
+        turtle.forward(width)
+        turtle.left(90)
+        turtle.forward(height)
+        turtle.left(90)
+    turtle.end_fill()
+
+# Menggambar bagian atas bendera (warna putih)
+flag.penup()
+flag.goto(-150, 90)
+flag.pendown()
+draw_rectangle(flag, "#FFFFFF", 300, 60)
+
+# Menggambar bagian bawah bendera (warna merah)
+flag.penup()
+flag.goto(-150, 30)
+flag.pendown()
+draw_rectangle(flag, "#D52B1E", 300, 60)
+
+# Menutup jendela saat di-klik
+wn.exitonclick()

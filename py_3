@@ -1,0 +1,58 @@
+import turtle
+
+# Membuat window untuk menggambar
+wn = turtle.Screen()
+wn.title("Bendera Palestina")
+wn.bgcolor("white")
+
+# Membuat objek turtle
+flag = turtle.Turtle()
+flag.speed(2)
+
+# Fungsi untuk menggambar persegi panjang dengan warna tertentu
+def draw_rectangle(turtle, color, width, height):
+    turtle.begin_fill()
+    turtle.fillcolor(color)
+    for _ in range(2):
+        turtle.forward(width)
+        turtle.left(90)
+        turtle.forward(height)
+        turtle.left(90)
+    turtle.end_fill()
+
+# Fungsi untuk menggambar segitiga dengan warna tertentu
+def draw_triangle(turtle, color, side_length):
+    turtle.begin_fill()
+    turtle.fillcolor(color)
+    for _ in range(3):
+        turtle.forward(side_length)
+        turtle.left(120)
+    turtle.end_fill()
+
+# Menggambar bagian atas bendera (warna hitam)
+flag.penup()
+flag.goto(-150, 90)
+flag.pendown()
+draw_rectangle(flag, "#000000", 300, 60)
+
+# Menggambar bagian tengah bendera (warna putih)
+flag.penup()
+flag.goto(-150, 30)
+flag.pendown()
+draw_rectangle(flag, "#FFFFFF", 300, 60)
+
+# Menggambar bagian bawah bendera (warna hijau)
+flag.penup()
+flag.goto(-150, -30)
+flag.pendown()
+draw_rectangle(flag, "#009B48", 300, 60)
+
+# Menggambar segitiga merah di tengah bagian putih (pindahkan ke garis sebelah kiri)
+flag.penup()
+flag.goto(-150, 30)  # Posisi segitiga di tengah bagian putih (sebelah kiri)
+flag.setheading(30)  # Menyesuaikan arah segitiga
+flag.pendown()
+draw_triangle(flag, "#EE1C25", 80)  # Ukuran segitiga yang lebih kecil
+
+# Menutup jendela saat di-klik
+wn.exitonclick()
