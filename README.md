@@ -1,2 +1,2 @@
-# tugas-Grafikom
+# UAS-Grafikom
 nurul aulia
