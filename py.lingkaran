@@ -1,0 +1,20 @@
+import turtle
+
+# Membuat window untuk menggambar
+wn = turtle.Screen()
+wn.title("Gambar Lingkaran")
+wn.bgcolor("white")
+
+# Membuat objek turtle
+lingkaran = turtle.Turtle()
+lingkaran.color("red")  # Mengatur warna garis menjadi merah
+
+# Fungsi untuk menggambar lingkaran dengan jari-jari 100
+def gambar_lingkaran():
+    lingkaran.circle(100)  # Menggambar lingkaran dengan jari-jari 100
+
+# Memanggil fungsi untuk menggambar lingkaran
+gambar_lingkaran()
+
+# Menutup window saat mengklik
+wn.exitonclick()
